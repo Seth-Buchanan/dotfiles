@@ -59,7 +59,8 @@ vim.keymap.set("n", "<M-j>", "5<C-W>+")
 vim.keymap.set("n", "<M-k>", "5<C-W>-")
 vim.keymap.set("n", "<M-l>", "5<C-W>>")
 
-vim.keymap.set("n", "<leader>n", "<cmd>silent noh<CR>")
+-- vim.keymap.set("n", "<leader>n", "<cmd>silent noh<CR>")
+vim.keymap.set("n", "<leader>n", "<cmd>NoNeckPain<CR>")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 --when <space> s is pressed all occurrences of the selected word will be replaced
@@ -73,16 +74,16 @@ vim.keymap.set("n", "<leader>/", "/<++><CR>:noh<CR>cf>")
 -- vim.keymap.set("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>")
 -- arrayify
 vim.keymap.set("n", "<leader>c", ":s/./'&', /g<CR>:s/, $/]/<CR>:s/^/[/<CR>:noh<CR>")
-vim.keymap.set("n", "<leader>d", "<cmd>InsertDate<CR>")
+vim.keymap.set("i", "<C-d>", "<ESC><cmd>InsertDate<CR>10la")
 
 vim.api.nvim_create_user_command("InsertDate", function()
     local date = vim.fn.system("date +%b/%d/%Y")
     WriteAfterCursor(date:gsub("\r?\n", ""))
 end, {})
 
-function WriteAfterCursor(str)
+function WriteAtCursor(str)
     local pos = vim.api.nvim_win_get_cursor(0)[2]
     local line = vim.api.nvim_get_current_line()
-    local newline = line:sub(0, pos + 1) .. str .. line:sub(pos + 2)
+    local newline = line:sub(0, pos) .. str .. line:sub(pos + 1)
     vim.api.nvim_set_current_line(newline)
 end

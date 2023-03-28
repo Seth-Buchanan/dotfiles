@@ -13,6 +13,7 @@ return require('packer').startup(function(use)
 	} -- file fuzzy finder
 
 	 use({
+	 	-- 'maxmx03/dracula.nvim',
 	 	'Mofiqul/dracula.nvim',
 	 	as = 'dracula',
 	 	config = function()
@@ -33,6 +34,8 @@ return require('packer').startup(function(use)
             }
         end
     }
+    -- stable version
+    use {"shortcuts/no-neck-pain.nvim", tag = "*" }
 	--Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
 	--this is the plug line that I copied
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
