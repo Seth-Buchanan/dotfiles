@@ -59,6 +59,11 @@ vim.keymap.set("n", "<M-j>", "5<C-W>+")
 vim.keymap.set("n", "<M-k>", "5<C-W>-")
 vim.keymap.set("n", "<M-l>", "5<C-W>>")
 
+vim.keymap.set({"n", "o", "x"}, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" })
+vim.keymap.set({"n", "o", "x"}, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" })
+vim.keymap.set({"n", "o", "x"}, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
+vim.keymap.set({"n", "o", "x"}, "ge", "<cmd>lua require('spider').motion('ge')<CR>", { desc = "Spider-ge" })
+
 -- vim.keymap.set("n", "<leader>n", "<cmd>silent noh<CR>")
 vim.keymap.set("n", "<leader>n", "<cmd>NoNeckPain<CR>")
 
@@ -75,6 +80,8 @@ vim.keymap.set("n", "<leader>/", "/<++><CR>:noh<CR>cf>")
 -- arrayify
 vim.keymap.set("n", "<leader>c", ":s/./'&', /g<CR>:s/, $/]/<CR>:s/^/[/<CR>:noh<CR>")
 vim.keymap.set("i", "<C-d>", "<ESC><cmd>InsertDate<CR>10la")
+
+vim.keymap.set("n", "vx", '<cmd>lua require"treesitter-unit".select()<CR>')
 
 vim.api.nvim_create_user_command("InsertDate", function()
     local date = vim.fn.system("date +%b/%d/%Y")

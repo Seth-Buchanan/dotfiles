@@ -166,6 +166,11 @@ _G.packer_plugins = {
     path = "/home/seth/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-spider"] = {
+    loaded = true,
+    path = "/home/seth/.local/share/nvim/site/pack/packer/start/nvim-spider",
+    url = "https://github.com/chrisgrieser/nvim-spider"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/seth/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -197,10 +202,20 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["todo.nvim"] = {
-    config = { "\27LJ\2\n�\1\0\0\6\0\15\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\r\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0005\5\a\0=\5\b\4=\4\t\0035\4\n\0005\5\v\0=\5\b\4=\4\f\3=\3\14\2B\0\2\1K\0\1\0\rkeywords\1\0\0\tNOTE\1\2\0\0\tINFO\1\0\2\ncolor\thint\ticon\t🧾\tWARN\balt\1\2\0\0\fWARNING\1\0\2\ncolor\fwarning\ticon\t🚦\tTODO\1\0\0\1\0\2\ticon\t🦾\ncolor\tinfo\nsetup\ttodo\frequire\0" },
+    config = { "\27LJ\2\n�\1\0\0\6\0\15\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\r\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0005\5\a\0=\5\b\4=\4\t\0035\4\n\0005\5\v\0=\5\b\4=\4\f\3=\3\14\2B\0\2\1K\0\1\0\rkeywords\1\0\0\tNOTE\1\2\0\0\tINFO\1\0\2\ticon\t🧾\ncolor\thint\tWARN\balt\1\2\0\0\fWARNING\1\0\2\ticon\t🚦\ncolor\fwarning\tTODO\1\0\0\1\0\2\ticon\t🦾\ncolor\tinfo\nsetup\ttodo\frequire\0" },
     loaded = true,
     path = "/home/seth/.local/share/nvim/site/pack/packer/start/todo.nvim",
     url = "https://github.com/AmeerTaweel/todo.nvim"
+  },
+  ["treesitter-unit"] = {
+    loaded = true,
+    path = "/home/seth/.local/share/nvim/site/pack/packer/start/treesitter-unit",
+    url = "/home/seth/projects/lua/treesitter-unit"
+  },
+  ["typewriter.vim"] = {
+    loaded = true,
+    path = "/home/seth/.local/share/nvim/site/pack/packer/start/typewriter.vim",
+    url = "/home/seth/projects/vimscript/typewriter.vim"
   },
   undotree = {
     loaded = true,
@@ -235,17 +250,17 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
-time([[Config for nvim-autopairs]], false)
 -- Config for: dracula
 time([[Config for dracula]], true)
 try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme dracula\bcmd\bvim\0", "config", "dracula")
 time([[Config for dracula]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
+time([[Config for nvim-autopairs]], false)
 -- Config for: todo.nvim
 time([[Config for todo.nvim]], true)
-try_loadstring("\27LJ\2\n�\1\0\0\6\0\15\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\r\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0005\5\a\0=\5\b\4=\4\t\0035\4\n\0005\5\v\0=\5\b\4=\4\f\3=\3\14\2B\0\2\1K\0\1\0\rkeywords\1\0\0\tNOTE\1\2\0\0\tINFO\1\0\2\ncolor\thint\ticon\t🧾\tWARN\balt\1\2\0\0\fWARNING\1\0\2\ncolor\fwarning\ticon\t🚦\tTODO\1\0\0\1\0\2\ticon\t🦾\ncolor\tinfo\nsetup\ttodo\frequire\0", "config", "todo.nvim")
+try_loadstring("\27LJ\2\n�\1\0\0\6\0\15\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\r\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0005\5\a\0=\5\b\4=\4\t\0035\4\n\0005\5\v\0=\5\b\4=\4\f\3=\3\14\2B\0\2\1K\0\1\0\rkeywords\1\0\0\tNOTE\1\2\0\0\tINFO\1\0\2\ticon\t🧾\ncolor\thint\tWARN\balt\1\2\0\0\fWARNING\1\0\2\ticon\t🚦\ncolor\fwarning\tTODO\1\0\0\1\0\2\ticon\t🦾\ncolor\tinfo\nsetup\ttodo\frequire\0", "config", "todo.nvim")
 time([[Config for todo.nvim]], false)
 
 _G._packer.inside_compile = false

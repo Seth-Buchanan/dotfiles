@@ -49,8 +49,11 @@ return require('packer').startup(function(use)
 	use('tpope/vim-surround')           -- change surrounding things
     use('voldikss/vim-floaterm')        -- floating vim terminal
     use('jose-elias-alvarez/null-ls.nvim')
+    use('chrisgrieser/nvim-spider')
     use('lervag/vimtex')-- auto vim compile and show in zathura
     use('/home/seth/projects/lua/arrayify.nvim')
+    use('/home/seth/projects/lua/treesitter-unit')
+    use('/home/seth/projects/vimscript/typewriter.vim')
 
     use {
 	'windwp/nvim-autopairs',
