@@ -47,7 +47,7 @@ return require("packer").startup(function(use)
     use("tpope/vim-surround")    -- change surrounding things
     use("voldikss/vim-floaterm") -- floating vim terminal
     use("jose-elias-alvarez/null-ls.nvim")
-    use("chrisgrieser/nvim-spider") -- changes jump spots for w, e, and b
+    -- use("chrisgrieser/nvim-spider") -- changes jump spots for w, e, and b
     use("lervag/vimtex")         -- auto vim compile and show in zathura
 
     use("/home/seth/projects/lua/arrayify.nvim")
