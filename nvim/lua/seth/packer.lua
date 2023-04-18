@@ -19,6 +19,25 @@ return require("packer").startup(function(use)
         end,
     }) -- dracula colorscheme
 
+    
+    use({ "shortcuts/no-neck-pain.nvim", tag = "*" }) -- stable version
+
+    use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
+    --Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    -- ^ vim-plug example for translation ^
+
+    use("nvim-treesitter/playground") -- lets you look at TS trees
+    use("theprimeagen/harpoon")    -- tab menu
+    use("mbbill/undotree")
+    use("BurntSushi/ripgrep")    -- telescope requirement
+    use("tpope/vim-fugitive")    -- git commands in vim
+    use("jose-elias-alvarez/null-ls.nvim")
+    use("lervag/vimtex")         -- auto vim compile and show in zathura
+
+    use("/home/seth/projects/lua/arrayify.nvim")
+    use("/home/seth/projects/lua/treesitter-unit")
+    use("/home/seth/projects/vimscript/typewriter.vim")
+
     use({
         "AmeerTaweel/todo.nvim",
         requires = "nvim-lua/plenary.nvim",
@@ -32,34 +51,23 @@ return require("packer").startup(function(use)
             })
         end,
     })
-    -- stable version
-    use({ "shortcuts/no-neck-pain.nvim", tag = "*" })
-    --Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    -- ^ vim-plug example for translation ^
 
-    use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
-    use("nvim-treesitter/playground") -- lets you look at TS trees
-    use("theprimeagen/harpoon")    -- tab menu
-    -- use('theprimeagen/vim-be-good')     -- vim learning game
-    use("mbbill/undotree")
-    use("BurntSushi/ripgrep")    -- telescope requirement
-    use("tpope/vim-fugitive")    -- git commands in vim
-    use("tpope/vim-surround")    -- change surrounding things
-    use("voldikss/vim-floaterm") -- floating vim terminal
-    use("jose-elias-alvarez/null-ls.nvim")
-    -- use("chrisgrieser/nvim-spider") -- changes jump spots for w, e, and b
-    use("lervag/vimtex")         -- auto vim compile and show in zathura
+    use({  -- change surrounding things but in lua
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    })
 
-    use("/home/seth/projects/lua/arrayify.nvim")
-    use("/home/seth/projects/lua/treesitter-unit")
-    use("/home/seth/projects/vimscript/typewriter.vim")
-
-    use({
+    use({ -- adds corresponding brackets, and other surrounding characters
         "windwp/nvim-autopairs",
         config = function()
             require("nvim-autopairs").setup({})
         end,
-    }) -- adds corresponding brackets, and other surrounding characters
+    }) 
 
     -- To update plugins, type :w then :so % followed by :PackerSync
 
